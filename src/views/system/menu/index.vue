@@ -6,12 +6,11 @@
                v-model="queryParams.menuName"
                placeholder="请输入菜单名称"
                clearable
-               style="width: 200px"
                @keyup.enter="handleQuery"
             />
          </el-form-item>
          <el-form-item label="状态" prop="status">
-            <el-select v-model="queryParams.status" placeholder="菜单状态" clearable style="width: 200px">
+            <el-select v-model="queryParams.status" placeholder="菜单状态" clearable>
                <el-option
                   v-for="dict in sys_normal_disable"
                   :key="dict.value"
@@ -118,7 +117,7 @@
                         @show="showSelectIcon"
                      >
                         <template #reference>
-                           <el-input v-model="form.icon" placeholder="点击选择图标" @blur="showSelectIcon" v-click-outside="hideSelectIcon" readonly>
+                           <el-input v-model="form.icon" placeholder="点击选择图标" @click="showSelectIcon" v-click-outside="hideSelectIcon" readonly>
                               <template #prefix>
                                  <svg-icon
                                     v-if="form.icon"
